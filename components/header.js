@@ -6,27 +6,17 @@ const Header = () => (
     <ul>
       <li>
         <Link href="/">
-          <a>青空漫画</a>
+          <a>andmorefine</a>
         </Link>
       </li>
       <li>
-        <Link href="/authors">
-          <a>作者一覧</a>
+        <Link href="/proverb">
+          <a>ことわざ一覧</a>
         </Link>
       </li>
       <li>
-        <Link href="/books" as="/books">
-          <a>書籍一覧</a>
-        </Link>
-      </li>
-      {/* <li>
-        <Link href="/books/[id]" as="/books/1">
-          <a>書籍一覧</a>
-        </Link>
-      </li> */}
-      <li>
-        <Link href="/tags" as="/tags">
-          <a>タグ一覧</a>
+        <Link href="/alphabetal">
+          <a>あいうえお一覧</a>
         </Link>
       </li>
     </ul>

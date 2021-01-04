@@ -24,3 +24,23 @@ a {
     text-decoration: underline;
   }
 }
+
+img {
+  width: 100%;
+}
+
+.top {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.proverb_list, .alphabetal_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

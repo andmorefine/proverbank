@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className={styles.footer}>
     <ul>
       <li>
-          <span>© { myYear } AOZORA MANGA All rights reserved</span>
+          <span>© { myYear } andmorefine Inc. All Rights Reserved.</span>
       </li>
     </ul>
     </footer>
