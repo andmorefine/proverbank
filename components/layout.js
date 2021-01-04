@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.scss'
 import { GA_TRACKING_ID } from '../lib/gtag'
 
 export default function Layout({ children, title }) {
-  const defaultTitle = '青空漫画 - 無料コミック漫画'
+  const defaultTitle = 'andmorefine - ことわざ'
   const headTitle = title ? `${title} | ${defaultTitle}` : defaultTitle
 
   return (
@@ -40,7 +40,7 @@ export default function Layout({ children, title }) {
       </Head>
       <NextSeo
         title={headTitle}
-        description="無料WEB漫画が全巻読み放題！無料＆登録不要で漫画（マンガ）が読めます。"
+        description="andmorefineでは、気持ち悪いことわざイラストを提供しています。"
       />
 
       <Header />
