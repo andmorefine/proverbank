@@ -2,28 +2,32 @@ import Link from 'next/link'
 import Layout from '../../components/layout'
 import { END_POINT, IMAGE_URL } from '../../constants/ConstantsList'
 
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+
 // post：getStaticPropsから取得したデータ
 const AlphabetalDetail = ({ posts }) => {
   return (
     <Layout title={posts ? `「${posts.alphabetal.name}」から始まることわざ` : ''}>
       {posts ? (<>
-        <h1>「{posts.alphabetal.name}」から始まることわざ（{posts.proverbs_total_count}件）</h1>
-        <ul className="proverb_list">
-          {posts.proverbs.map((proverb) => (
-            <li key={proverb.id}>
-              {proverb.image ? (<img src={`${IMAGE_URL}/${proverb.image}`} />) : (<></>)}
-              <Link href={`/proverb/${proverb.id}`}>
-                <a>{proverb.name}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <Container>
+          <h1 className="h4">「{posts.alphabetal.name}」から始まることわざ（{posts.proverbs_total_count}件）</h1>
+          <Row>
+            {posts.proverbs.map((proverb) => (
+              <Col key={proverb.id} xs={6} md={4} className="my-2">
+                <Card>
+                  {proverb.image ? (<Card.Img variant="top" src={`${IMAGE_URL}/${proverb.image}`} />) : (<></>)}
+                  <Card.Body>
+                    <Button href={`/proverb/${proverb.id}`} variant="outline-primary">{proverb.name}</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
         <ul className="alphabetal_list">
           {posts.m_alphabetals.map((alphabetal) => (
-            <li key={alphabetal.id}>
-              <Link href={`/alphabetal/${alphabetal.id}`}>
-                <a>{alphabetal.name}</a>
-              </Link>
+            <li className="m-1" key={alphabetal.id}>
+              <Button href={`/alphabetal/${alphabetal.id}`} variant="outline-dark">{alphabetal.name}</Button>
             </li>
           ))}
         </ul>

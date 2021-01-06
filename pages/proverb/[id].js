@@ -2,36 +2,40 @@ import Link from 'next/link'
 import Layout from '../../components/layout'
 import { END_POINT, IMAGE_URL } from '../../constants/ConstantsList'
 
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+
 // post：getStaticPropsから取得したデータ
 const ProverbDetail = ({ posts }) => {
   return (
     <Layout title={posts ? posts.proverb.name : ''}>
       {posts ? (<>
-        <h3>{posts.proverb.kana}</h3>
-        <h1>{posts.proverb.name}</h1>
-        <p>{posts.proverb.text}</p>
-        {posts.proverb.image ? (<img src={`${IMAGE_URL}/${posts.proverb.image}`} />) : (<></>)}
-        <ul className="proverb_list">
-          {posts.others.map((item) => (
-            <li key={item.id}>
-              {item.image ? (<img src={`${IMAGE_URL}/${item.image}`} />) : (<></>)}
-              <Link href={`/proverb/${item.id}`}>
-                <a>{item.name}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <Container>
+          <h3>{posts.proverb.kana}</h3>
+          <h1>{posts.proverb.name}</h1>
+          <p>{posts.proverb.text}</p>
+          {posts.proverb.image ? (<img src={`${IMAGE_URL}/${posts.proverb.image}`} />) : (<></>)}
+          <Row>
+            {posts.others.map((proverb) => (
+              <Col key={proverb.id} xs={6} md={4} className="my-2">
+                <Card>
+                  {proverb.image ? (<Card.Img variant="top" src={`${IMAGE_URL}/${proverb.image}`} />) : (<></>)}
+                  <Card.Body>
+                    <Button href={`/proverb/${proverb.id}`} variant="outline-primary">{proverb.name}</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
         <ul className="alphabetal_list">
           {posts.alphabetals.map((alphabetal) => (
-            <li key={alphabetal.id}>
-              <Link href={`/alphabetal/${alphabetal.id}`}>
-                <a>{alphabetal.name}</a>
-              </Link>
+            <li className="m-1" key={alphabetal.id}>
+              <Button href={`/alphabetal/${alphabetal.id}`} variant="outline-dark">{alphabetal.name}</Button>
             </li>
           ))}
         </ul>
       </>) : (<></>)}
-      <Link href="/proverb/">
+      <Link href="/proverb">
         <a>Back</a>
       </Link>
     </Layout>

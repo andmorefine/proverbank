@@ -9,7 +9,7 @@ const Home = ({ posts }) => {
       <h1>ことわざ【諺】</h1>
       <Container>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} className="my-2">
             <Card>
               <Card.Img variant="top" src={`${IMAGE_URL}/${posts.proverb_image}`} />
               <Card.Body>
@@ -19,7 +19,7 @@ const Home = ({ posts }) => {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} className="my-2">
             <Card>
               <Card.Img variant="top" src='https://d2y9vn9mruehfd.cloudfront.net/img/stickers/main.png' />
               <Card.Body>
@@ -33,7 +33,7 @@ const Home = ({ posts }) => {
         <Row>
           {posts.proverb_radom.map((proverb) => (
             <>
-            <Col key={proverb.id} xs={12} md={4}>
+            <Col key={proverb.id} xs={12} md={4} className="my-2">
               <Card>
                 <Card.Img variant="top" src={`${IMAGE_URL}/${proverb.image}`} />
                 <Card.Body>

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Layout from '../../components/layout'
-import { END_POINT, IMAGE_URL } from '../../constants/ConstantsList'
+import { END_POINT } from '../../constants/ConstantsList'
+
+import { Button } from 'react-bootstrap';
 
 const Alphabetal = ({ posts }) => {
   return (
@@ -8,10 +10,8 @@ const Alphabetal = ({ posts }) => {
       <h1>あいうえお一覧</h1>
       <ul className="alphabetal_list">
         {posts.alphabetals.map((alphabetal) => (
-          <li key={alphabetal.id}>
-            <Link href={`/alphabetal/${alphabetal.id}`}>
-              <a>{alphabetal.name}</a>
-            </Link>
+          <li className="m-1" key={alphabetal.id}>
+            <Button href={`/alphabetal/${alphabetal.id}`} variant="outline-dark">{alphabetal.name}</Button>
           </li>
         ))}
       </ul>
