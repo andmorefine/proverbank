@@ -1,26 +1,21 @@
-import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
+import { Navbar, Nav } from 'react-bootstrap';
 
 const Header = () => (
-  <header className={styles.header}>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>andmorefine</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/proverb">
-          <a>ことわざ一覧</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/alphabetal">
-          <a>あいうえお一覧</a>
-        </Link>
-      </li>
-    </ul>
-  </header>
+  <>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="/">andmorefine</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/proverb">ことわざ一覧</Nav.Link>
+          <Nav.Link href="/alphabetal">あいうえお一覧</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+      <Navbar.Collapse className="justify-content-end">
+        <Navbar.Text><a href="#login">お問い合わせ</a></Navbar.Text>
+      </Navbar.Collapse>
+    </Navbar>
+  </>
 )
 
 export default Header
