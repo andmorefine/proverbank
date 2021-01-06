@@ -32,7 +32,6 @@ const Home = ({ posts }) => {
         </Row>
         <Row>
           {posts.proverb_radom.map((proverb) => (
-            <>
             <Col key={proverb.id} xs={12} md={4} className="my-2">
               <Card>
                 <Card.Img variant="top" src={`${IMAGE_URL}/${proverb.image}`} />
@@ -41,7 +40,6 @@ const Home = ({ posts }) => {
                 </Card.Body>
               </Card>
             </Col>
-            </>
           ))}
         </Row>
       </Container>

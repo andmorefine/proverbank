@@ -12,7 +12,7 @@ const Header = () => (
         </Nav>
       </Navbar.Collapse>
       <Navbar.Collapse className="justify-content-end">
-        <Navbar.Text><a href="#login">お問い合わせ</a></Navbar.Text>
+        <Navbar.Text><a href="/contact/new">お問い合わせ</a></Navbar.Text>
       </Navbar.Collapse>
     </Navbar>
   </>
